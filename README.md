@@ -1,2 +1,2 @@
-# tc2008b_multiagentes
-Recopilación de actividades multiagentes
+# Actividades multiagentes
+David René Langarica Hernández | A01708936
