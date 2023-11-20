@@ -79,7 +79,7 @@ public class BossAttackPatterns : MonoBehaviour
                 }
             }
 
-            float randomDelay = Random.Range(3.5f, 6.7f);
+            float randomDelay = Random.Range(4.8f, 6.7f);
             yield return new WaitForSeconds(randomDelay);
         }
     }
@@ -97,7 +97,7 @@ public class BossAttackPatterns : MonoBehaviour
             float width = Mathf.Cos(i * Mathf.PI * 2 / 20) * 5;
             Vector3 direction = new Vector3(width * Mathf.Cos(angle), height, width * Mathf.Sin(angle));
             GameObject proj = Instantiate(projectile, transform.position + direction, Quaternion.identity);
-            proj.GetComponent<Rigidbody>().velocity = direction.normalized * 10f;
+            proj.GetComponent<Rigidbody>().velocity = direction.normalized * 12f;
             yield return null;
         }
     }
@@ -118,7 +118,7 @@ public class BossAttackPatterns : MonoBehaviour
                 float angle = i + wave * Mathf.PI * 2 / numProjectiles;
                 Vector3 direction = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
                 GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
-                proj.GetComponent<Rigidbody>().velocity = direction.normalized * 15f;
+                proj.GetComponent<Rigidbody>().velocity = direction.normalized * 16f;
             }
             yield return new WaitForSeconds(delayBetweenWaves);
         }
@@ -148,7 +148,7 @@ public class BossAttackPatterns : MonoBehaviour
         int cubeSize = 3;
         float expansionDuration = 2.0f;
         float contractionDuration = 4.0f;
-        float timeStep = 0.2f;
+        float timeStep = 0.3f;
 
         for (float t = 0; t <= 1; t += timeStep / expansionDuration)
         {
