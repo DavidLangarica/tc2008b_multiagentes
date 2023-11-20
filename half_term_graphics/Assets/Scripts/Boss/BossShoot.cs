@@ -93,11 +93,11 @@ public class BossAttackPatterns : MonoBehaviour
         for (int i = 0; i < numProjectiles; i++)
         {
             float angle = i * Mathf.PI * 2 / numProjectiles;
-            float height = Mathf.Sin(i * Mathf.PI * 2 / 20) * 5;
+            float height = Mathf.Sin(i * Mathf.PI * 2 / 20) * 2;
             float width = Mathf.Cos(i * Mathf.PI * 2 / 20) * 5;
             Vector3 direction = new Vector3(width * Mathf.Cos(angle), height, width * Mathf.Sin(angle));
             GameObject proj = Instantiate(projectile, transform.position + direction, Quaternion.identity);
-            proj.GetComponent<Rigidbody>().velocity = direction.normalized * 15f;
+            proj.GetComponent<Rigidbody>().velocity = direction.normalized * 10f;
             yield return null;
         }
     }
@@ -115,7 +115,7 @@ public class BossAttackPatterns : MonoBehaviour
         {
             for (int i = 0; i < numProjectiles; i++)
             {
-                float angle = i * Mathf.PI * 2 / numProjectiles;
+                float angle = i + wave * Mathf.PI * 2 / numProjectiles;
                 Vector3 direction = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
                 GameObject proj = Instantiate(projectile, transform.position, Quaternion.identity);
                 proj.GetComponent<Rigidbody>().velocity = direction.normalized * 15f;
