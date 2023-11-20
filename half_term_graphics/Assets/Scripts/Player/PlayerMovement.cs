@@ -218,7 +218,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-        moveSpeed = walkSpeed;
+        moveSpeed = runSpeed;
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         moveDirection = transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal");

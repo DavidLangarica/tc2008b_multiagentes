@@ -109,7 +109,7 @@ public class BossAttackPatterns : MonoBehaviour
     {
         int numProjectiles = 50;
         int numWaves = 6;
-        float delayBetweenWaves = 0.5f;
+        float delayBetweenWaves = 0.8f;
 
         for (int wave = 0; wave < numWaves; wave++)
         {
